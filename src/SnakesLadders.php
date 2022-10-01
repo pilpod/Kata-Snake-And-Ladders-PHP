@@ -15,7 +15,7 @@ class SnakesLadders {
         $dice2->roll();
         $score = $this->dicesSum($dice1,$dice2);
         $this->player->moveToSquare($score);
-        return "Player n is on square {$this->player->getPosition()}";
+        return "Player {$this->player->getName()} is on square {$this->player->getPosition()}";
     }
 
     public function dicesSum(Dice $dice1, Dice $dice2) : int

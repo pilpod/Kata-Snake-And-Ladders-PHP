@@ -14,7 +14,7 @@ class SnakesLaddersTest extends TestCase {
 
     protected function setUp() : void 
     {
-        $this->player = new Player;
+        $this->player = new Player("Giaco");
         $this->snakeLadders = new SnakesLadders($this->player);
     }
     
@@ -57,7 +57,7 @@ class SnakesLaddersTest extends TestCase {
         $result = $this->snakeLadders->play($dice1,$dice2);
 
         $this->assertIsInt($this->player->getPosition());
-        $this->assertEquals("Player n is on square {$this->player->getPosition()}", $result);
+        $this->assertEquals("Player {$this->player->getName()} is on square {$this->player->getPosition()}", $result);
     }
     
 }
