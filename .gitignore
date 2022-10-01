@@ -4,3 +4,4 @@ vendor/
 .phpunit.result.cache
 .replit
 phpunit.xml.bak
+.vscode
