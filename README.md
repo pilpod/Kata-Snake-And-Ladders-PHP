@@ -23,7 +23,7 @@ Snakes and Ladders is an ancient Indian board game regarded today as a worldwide
 
 ### Task
 
-Your task is to make a simple class called SnakesLadders. The test cases will call the method play(die1, die2) independantly of the state of the game or the player turn. The variables die1 and die2 are the die thrown in a turn and are both integers between 1 and 6. The player will move the sum of die1 and die2.
+Your task is to make a simple class called SnakesLadders. The test cases will call the method play(dice1, dice2) independantly of the state of the game or the player turn. The variables dice1 and dice2 are the die thrown in a turn and are both integers between 1 and 6. The player will move the sum of dice1 and dice2.
 
 ### The Board
 
