@@ -31,7 +31,7 @@ Your task is to make a simple class called SnakesLadders. The test cases will ca
 
 ### Rules
 
-1.  There are two players and both start off the board on square 0.
+1.  There are two players and both start off the board on square 1.
 
 2.  Player 1 starts and alternates with player 2.
 
