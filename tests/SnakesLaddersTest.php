@@ -26,7 +26,7 @@ class SnakesLaddersTest extends TestCase {
 
         $dice1->roll();
         $dice2->roll();
-        $result = $this->snakeLadders->dicesSum($dice1,$dice2);
+        $result = $this->snakeLadders->dicesSum($dice1->getScore(),$dice2->getScore());
 
         $this->assertIsInt($result);
         $this->assertGreaterThanOrEqual(2, $result);
@@ -38,9 +38,11 @@ class SnakesLaddersTest extends TestCase {
         $dice1 = new Dice;
         $dice2 = new Dice;
 
+        $dice1->roll();
+        $dice2->roll();
         $this->snakeLadders->play($dice1,$dice2);
 
-        $positionToMove = $this->snakeLadders->dicesSum($dice1,$dice2) + 1;
+        $positionToMove = $this->snakeLadders->dicesSum($dice1->getScore(),$dice2->getScore()) + 1;
 
         $this->assertIsInt($this->player->getPosition());
         $this->assertEquals($positionToMove, $this->player->getPosition());
@@ -54,10 +56,32 @@ class SnakesLaddersTest extends TestCase {
         $dice1 = new Dice;
         $dice2 = new Dice;
         
+        $dice1->roll();
+        $dice2->roll();
         $result = $this->snakeLadders->play($dice1,$dice2);
 
         $this->assertIsInt($this->player->getPosition());
         $this->assertEquals("Player {$this->player->getName()} is on square {$this->player->getPosition()}", $result);
     }
+
+    /** @test */
+    public function test_if_value_of_dices_is_the_same_player_can_roll_dice_again()
+    {
+        $dice1 = new Dice;
+        $dice2 = new Dice;
+
+        $dice1->setScore(1);
+        $dice2->setScore(1);
+        $result1 = $this->snakeLadders->play($dice1,$dice2);
+
+        $this->assertEquals("Player Giaco roll dices again", $result1);
+
+        $dice1->setScore(2);
+        $dice2->setScore(3);
+        $result2 = $this->snakeLadders->play($dice1,$dice2);
+
+        $this->assertEquals("Player Giaco is on square 8", $result2);
+    }
+    
     
 }
