@@ -20,7 +20,14 @@ class Board
 
     public static function isLadder(Player $player) : void
     {
-        if ($player->getPosition() == 2) $player->setPosition(38);
-        
+        $ladders = [
+            2 => 38,
+            7 => 14,
+            15 => 26,
+        ];
+
+        foreach ($ladders as $initSquare => $endSquare) {
+            if ($player->getPosition() == $initSquare) $player->setPosition($endSquare);
+        }   
     }
 }

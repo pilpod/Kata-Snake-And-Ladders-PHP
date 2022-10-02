@@ -39,8 +39,8 @@ class SnakesLaddersTest extends TestCase {
     public function test_player_is_on_square_0_can_change_his_position_with_dices_sum()
     {
 
-        $this->dice1->roll();
-        $this->dice2->roll();
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(3);
         $this->snakeLadders->play($this->dice1,$this->dice2);
 
         $positionToMove = $this->snakeLadders->dicesSum($this->dice1->getScore(),$this->dice2->getScore());
@@ -54,8 +54,8 @@ class SnakesLaddersTest extends TestCase {
     {
         $this->player->setPosition(10);
         
-        $this->dice1->roll();
-        $this->dice2->roll();
+        $this->dice1->setScore(5);
+        $this->dice2->setScore(2);
         $result = $this->snakeLadders->play($this->dice1,$this->dice2);
 
         $this->assertIsInt($this->player->getPosition());
@@ -89,6 +89,31 @@ class SnakesLaddersTest extends TestCase {
 
         $this->assertEquals(38,$this->player->getPosition());
         $this->assertEquals("Player Giaco roll dices again",$result);
+    }
+    
+    /** @test */
+    public function test_if_player_position_is_7_climpUp_to_square_14()
+    {
+        $this->dice1->setScore(3);
+        $this->dice2->setScore(4);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(14,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 14", $result);
+    }
+
+    public function test_if_player_position_is_15_climpUp_to_square_26()
+    {
+        $this->player->setPosition(10);
+        $this->dice1->setScore(3);
+        $this->dice2->setScore(2);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(26,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 26", $result);
+
     }
     
     
