@@ -11,7 +11,7 @@ class Player
      public function __construct(string $name)
      {
           $this->name = $name;
-          $this->position = 1;
+          $this->position = 0;
      }
 
      /**
