@@ -76,7 +76,7 @@ class SnakesLaddersTest extends TestCase {
         $this->dice2->setScore(3);
         $result2 = $this->snakeLadders->play($this->dice1,$this->dice2);
 
-        $this->assertEquals("Player Giaco is on square 7", $result2);
+        $this->assertEquals("Player Giaco is on square 43", $result2);
     }
     
     /** @test */
@@ -87,7 +87,8 @@ class SnakesLaddersTest extends TestCase {
 
         $result = $this->snakeLadders->play($this->dice1,$this->dice2);
 
-        $this->assertEquals(2,$this->player->getPosition());
+        $this->assertEquals(38,$this->player->getPosition());
+        $this->assertEquals("Player Giaco roll dices again",$result);
     }
     
     

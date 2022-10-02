@@ -13,6 +13,7 @@ class SnakesLadders {
     {
         $score = $this->dicesSum($dice1->getScore(),$dice2->getScore());
         $this->player->moveToSquare($score);
+        Board::isLadder($this->player);
 
         if ($dice1->getScore() == $dice2->getScore()) {
             return "Player {$this->player->getName()} roll dices again";

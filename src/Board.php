@@ -17,4 +17,10 @@ class Board
     {
         return $this->maxSquares;
     }
+
+    public static function isLadder(Player $player) : void
+    {
+        if ($player->getPosition() == 2) $player->setPosition(38);
+        
+    }
 }
