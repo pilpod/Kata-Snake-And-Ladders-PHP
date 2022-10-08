@@ -24,6 +24,7 @@ class Board
             2 => 38,
             7 => 14,
             15 => 26,
+            28 => 84
         ];
 
         foreach ($ladders as $initSquare => $endSquare) {

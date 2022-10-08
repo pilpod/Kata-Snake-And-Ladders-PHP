@@ -115,6 +115,20 @@ class SnakesLaddersTest extends TestCase {
         $this->assertEquals("Player Giaco is on square 26", $result);
 
     }
+
+    /** @test */
+    public function test_if_player_position_is_28_climpUp_to_square_84()
+    {
+        $this->player->setPosition(21);
+        $this->dice1->setScore(4);
+        $this->dice2->setScore(3);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(84,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 84", $result);
+    }
+    
     
     
 }
