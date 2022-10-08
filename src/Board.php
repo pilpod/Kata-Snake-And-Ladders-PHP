@@ -37,4 +37,24 @@ class Board
             if ($player->getPosition() == $initSquare) $player->setPosition($endSquare);
         }   
     }
+
+    public static function isSnake(Player $player) : void 
+    {
+        $snakes = [
+            16 => 6,
+            46 => 25,
+            49 => 11,
+            62 => 19,
+            64 => 60,
+            74 => 53,
+            89 => 68,
+            92 => 88,
+            95 => 75,
+            99 => 80
+        ];
+
+        foreach ($snakes as $snakeMouth => $snakeTail) {
+            if ($player->getPosition() == $snakeMouth) $player->setPosition($snakeTail);
+        }
+    }
 }

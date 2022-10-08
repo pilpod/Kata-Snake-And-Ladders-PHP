@@ -207,8 +207,130 @@ class SnakesLaddersTest extends TestCase {
         $this->assertEquals("Player Giaco is on square 94", $result);
     }
     
+    /** @test */
+    public function test_Snake_if_player_position_is_16_slideDown_to_square_6()
+    {
+        $this->player->setPosition(13);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(6,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 6", $result);
+    }
+
+    /** @test */
+    public function test_Snake_if_player_position_is_46_slideDown_to_square_25()
+    {
+        $this->player->setPosition(43);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(25,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 25", $result);
+    }
     
+    /** @test */
+    public function test_Snake_if_player_position_is_49_slideDown_to_square_11()
+    {
+        $this->player->setPosition(46);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(11,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 11", $result);
+    }
     
-    
+    /** @test */
+    public function test_Snake_if_player_position_is_62_slideDown_to_square_19()
+    {
+        $this->player->setPosition(59);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(19,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 19", $result);
+    }
+
+    /** @test */
+    public function test_Snake_if_player_position_is_64_slideDown_to_square_60()
+    {
+        $this->player->setPosition(61);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(60,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 60", $result);
+    }
+
+    /** @test */
+    public function test_Snake_if_player_position_is_74_slideDown_to_square_53()
+    {
+        $this->player->setPosition(71);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(53,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 53", $result);
+    }
+
+    public function test_Snake_if_player_position_is_89_slideDown_to_square_68()
+    {
+        $this->player->setPosition(86);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(68,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 68", $result);
+    }
+
+    public function test_Snake_if_player_position_is_92_slideDown_to_square_88()
+    {
+        $this->player->setPosition(89);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(88,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 88", $result);
+    }
+
+    public function test_Snake_if_player_position_is_95_slideDown_to_square_75()
+    {
+        $this->player->setPosition(92);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(75,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 75", $result);
+    }
+
+    public function test_Snake_if_player_position_is_99_slideDown_to_square_80()
+    {
+        $this->player->setPosition(96);
+        $this->dice1->setScore(2);
+        $this->dice2->setScore(1);
+
+        $result = $this->snakeLadders->play($this->dice1,$this->dice2);
+
+        $this->assertEquals(80,$this->player->getPosition());
+        $this->assertEquals("Player Giaco is on square 80", $result);
+    }
     
 }
