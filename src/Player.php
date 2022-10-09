@@ -7,11 +7,13 @@ class Player
 
      private string $name;
      private int $position;
+     private bool $turnToPlay;
 
      public function __construct(string $name)
      {
           $this->name = $name;
           $this->position = 0;
+          $this->turnToPlay = false;
      }
 
      /**
@@ -42,8 +44,25 @@ class Player
           return $this;
      }
 
+     public function getTurnToPlay()
+     {
+          return $this->turnToPlay;
+     }
+
+     public function setTurnToPlay(bool $state) : object
+     {
+          $this->turnToPlay = $state;
+
+          return $this;
+     }
+
      public function moveToSquare(int $score): void
      {
           $this->position += $score;
+          
+          if ($this->position > 100 ) {
+               $squareBounceBack = $this->position - 100;
+               $this->position = 100 - $squareBounceBack;
+          }
      }
 }
